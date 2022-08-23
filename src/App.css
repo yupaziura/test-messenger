@@ -1,0 +1,4 @@
+.main_window {
+  display: flex;
+  flex-direction: row;
+}
