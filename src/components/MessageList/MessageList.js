@@ -9,14 +9,18 @@ import './MessageList.scss';
 
 const MessageList = (props) => {
 
-    const bool = true;
-    const {Image} = data[0];
 
 
     return (
-        <>
-            <Message/>
-        </>
+        <div className='message_list'>
+            {data[0].messages.map((item, i)=> {
+                return (
+                    <div key={i}>
+                        <Message type={item.type === 'in'? true : false}  text={item.text} date={item.date} time={item.time}/>
+                    </div>
+                )
+            })}
+        </div>
     )
 }
 
