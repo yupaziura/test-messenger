@@ -1,0 +1,41 @@
+.contact {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    p {
+        margin: 8px;
+    }
+
+    &__item {
+        height: 90px;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid rgb(228, 228, 228);
+
+        display: grid; 
+        grid-template-columns: 1fr 3fr 2fr; 
+        grid-template-rows: 70px; 
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+        align-items: center
+    }
+
+
+    &__img {
+        width: 40px;
+        height: 40px;
+        justify-self: center;
+    }
+    &__date{
+        justify-self: end;
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(102, 101, 101);
+    }
+
+    &__message {
+        font-size: 14px;
+        color: grey;
+    }
+}
