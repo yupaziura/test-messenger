@@ -4,6 +4,7 @@
 import MessagesWindow from './components/MessagesWindow/MessagesWindow';
 import ContactsWindow from './components/ContactsWindow/ContactsWindow';
 import SearchPanel from './components/SearchPanel/SearchPanel';
+import ContactsPanel from './components/ContactsPanel/ContactsPanel';
 import ContactPanel from './components/ContactPanel/ContactPanel';
 
 // styles
@@ -14,10 +15,11 @@ function App() {
     <div className="main_window">
       <ContactsWindow>
           <SearchPanel/>
-          <ContactPanel/>
+          <ContactsPanel/>
       </ContactsWindow>
-      <MessagesWindow>
 
+      <MessagesWindow>
+        <ContactPanel/>
       </MessagesWindow>
     </div>
   );
