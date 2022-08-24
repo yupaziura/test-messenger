@@ -20,6 +20,7 @@ function App() {
   const [search, setSearch] = useState(null);
   const [index, setIndex] = useState(null);
 
+
   useEffect(()=> {
     setSource(
         search?
@@ -30,7 +31,6 @@ function App() {
     )
 }, [search])
 
-console.log(index)
 
 
   return (
@@ -43,7 +43,7 @@ console.log(index)
       <MessagesWindow>
         <ContactPanel/>
         <MessageList index={index} source={source}/>
-        {index !== null? <InputPanel/> : null}
+        {index !== null? <InputPanel index={index} setSource={setSource} source={source}/> : null}
       </MessagesWindow>
     </div>
   );
