@@ -8,7 +8,7 @@ import './Message.scss';
 
 const Message = (props) => {
 
-    const {Image} = data[0];
+    const {Image} = data[props.index];
 
 
     return (
