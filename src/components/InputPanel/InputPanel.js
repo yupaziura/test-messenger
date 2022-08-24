@@ -8,50 +8,39 @@ import './InputPanel.scss';
 
 const InputPanel = (props) => {
 
-    const [message, setMessage] = useState(null);
-    // console.log([...props.source[props.index].messages, {type:'out', date:'25.08.2022', time:'12:45', text:'sdg'}])
+    const [message, setMessage] = useState('');
+
+    const fullDate = new Date();
+    const day = fullDate.getDate();
+    const month = fullDate.getMonth() + 1 <10 ?  '0'+(fullDate.getMonth() + 1) : fullDate.getMonth() + 1;
+    const year = fullDate.getFullYear();
+
+    const hour = fullDate.getHours();
+    const minutes = fullDate.getMinutes() <10? '0'+fullDate.getMinutes() : fullDate.getMinutes();
+
+    const formatedDate = `${day}.${month}.${year}`;
+    const formatedTime = `${hour}:${minutes}`
 
 
-   
-    //    useEffect(()=>{
-    //     props.source.map((obj, i)=> {
-    //         if (i === props.index) {
-    //             obj.messages = [...obj.messages, {type:'out', date:'25.08.2022', time:'12:45', text:'sdg'}]
-                
-    //         }
-    //         props.setSource([...props.source])
-    //     })
-    //    },[])
-          
-                
-           
-         
-        // props.source.map((item, i)=> {
-            
-        //         return [...item, item.messages.map((t)=> {
-        //             return [{type:'out', date:'25.08.2022', time:'12:45', text:'sdg'}]
-        //         })]})
-    
-
-    const Test = (e) => {
+    const sendMessage = (e) => {
         e.preventDefault();
 
         props.source.map((obj, i)=> {
             if (i === props.index) {
-                obj.messages = [...obj.messages, {type:'out', date:'25.08.2022', time:'12:45', text: message}]
+                obj.messages = [...obj.messages, {type:'out', date:formatedDate, time:formatedTime, text: message}]
                 
             }
             props.setSource([...props.source])
         })
-
         setMessage('')
 
-    }
+    };
+
 
     return (
-        <div className='input_panel'>
-            <input onChange={(e)=>{setMessage(e.target.value)}} type="text" placeholder='Type your message' />
-            <button onClick={(e)=>{Test(e)}} className='input_button'>
+        <div className='input_panel' >
+            <input value={message} onChange={(e)=>{setMessage(e.target.value)}} type="text" placeholder='Type your message' />
+            <button onClick={(e)=>sendMessage(e)} className='input_button'>
                 <img src={require('../../img/send.png')} alt="" />
             </button>
         </div>
