@@ -6,9 +6,9 @@ import data from '../../db/source.js';
 // styles
 import './ContactPanel.scss';
 
-const ContactPanel = (props) => {
+const ContactPanel = ({index, source}) => {
 
-    const {Image} = data[0];
+    const {Image} = source[index];
 
     return (
         <div className='single_contact'>
@@ -16,7 +16,7 @@ const ContactPanel = (props) => {
                 <Image/>
             </div>
             <div className="single_contact__name">
-                <h4>{data[0].name}</h4>
+                <h4>{source[index]?.name}</h4>
             </div>
         </div>
     )

@@ -41,7 +41,7 @@ function App() {
       </ContactsWindow>
 
       <MessagesWindow>
-        <ContactPanel/>
+        {index !== null? <ContactPanel index={index} source={source}/> : null}
         <MessageList index={index} source={source}/>
         {index !== null? <InputPanel index={index} setSource={setSource} source={source}/> : null}
       </MessagesWindow>
