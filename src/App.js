@@ -1,4 +1,5 @@
 // basic
+import { useState } from 'react';
 
 // components
 import MessagesWindow from './components/MessagesWindow/MessagesWindow';
@@ -13,11 +14,14 @@ import MessageList from './components/MessageList/MessageList';
 import './App.css';
 
 function App() {
+
+  const [search, setSearch] = useState(null)
+
   return (
     <div className="main_window">
       <ContactsWindow>
-          <SearchPanel/>
-          <ContactsPanel/>
+          <SearchPanel setSearch={setSearch}/>
+          <ContactsPanel search={search}/>
       </ContactsWindow>
 
       <MessagesWindow>

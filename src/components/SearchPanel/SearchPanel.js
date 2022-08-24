@@ -12,7 +12,7 @@ const SearchPanel = (props) => {
     return (
         <div className='search_panel'>
             <Avatar/>
-            <Search/>
+            <Search setSearch={props.setSearch}/>
         </div>
     )
 }
