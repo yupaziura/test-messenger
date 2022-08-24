@@ -18,7 +18,11 @@
         grid-template-rows: 70px; 
         grid-column-gap: 0px;
         grid-row-gap: 0px; 
-        align-items: center
+        align-items: center;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(234, 232, 232);
+        }
     }
 
 

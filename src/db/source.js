@@ -104,6 +104,18 @@ const data = [
                 time: '11:45',
                 text: 'Test message2'
             },
+            {
+                type: 'out',
+                date: '22.08.2022',
+                time: '11:45',
+                text: 'Test message1'
+            },
+            {
+                type: 'out',
+                date: '22.08.2022',
+                time: '11:45',
+                text: 'Test message1'
+            },
         ]
     },
 ]

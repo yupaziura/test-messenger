@@ -1,6 +1,4 @@
 // basic
-import data from '../../db/source.js';
-import { useEffect, useState } from 'react';
 
 // components
 import Contact from '../Contact/Contact';
@@ -10,22 +8,13 @@ import './ContactsPanel.scss';
 
 const ContacstPanel = (props) => {
 
-    const [source, setSource] = useState(data);
 
-    useEffect(()=> {
-        setSource(
-            props.search?
-            source.filter((item, i)=> {
-                return item.name.includes(props.search)
-            })
-            : data
-        )
-    }, [props.search])
+
     
 
-    const items = source.map(({name,messages, Image}, i) => {
+    const items = props.source.map(({name,messages, Image}, i) => {
         return (
-            <div className='contact__item' key={i}>
+            <div className='contact__item' key={i} onClick={()=>{props.setIndex(i)}}>
                 <div className="contact__img">
                     <Image />
                 </div>

@@ -1,5 +1,6 @@
 // basic
-import { useState } from 'react';
+import data from './db/source.js';
+import { useState, useEffect } from 'react';
 
 // components
 import MessagesWindow from './components/MessagesWindow/MessagesWindow';
@@ -15,19 +16,34 @@ import './App.css';
 
 function App() {
 
-  const [search, setSearch] = useState(null)
+  const [source, setSource] = useState(data);
+  const [search, setSearch] = useState(null);
+  const [index, setIndex] = useState(null);
+
+  useEffect(()=> {
+    setSource(
+        search?
+        source.filter((item, i)=> {
+            return item.name.includes(search)
+        })
+        : data
+    )
+}, [search])
+
+console.log(index)
+
 
   return (
     <div className="main_window">
       <ContactsWindow>
           <SearchPanel setSearch={setSearch}/>
-          <ContactsPanel search={search}/>
+          <ContactsPanel search={search} setIndex={setIndex} source={source}/>
       </ContactsWindow>
 
       <MessagesWindow>
         <ContactPanel/>
-        <MessageList/>
-        <InputPanel/>
+        <MessageList index={index} source={source}/>
+        {index !== null? <InputPanel/> : null}
       </MessagesWindow>
     </div>
   );

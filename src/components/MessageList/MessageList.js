@@ -13,13 +13,18 @@ const MessageList = (props) => {
 
     return (
         <div className='message_list'>
-            {data[0].messages.map((item, i)=> {
-                return (
-                    <div key={i}>
-                        <Message type={item.type === 'in'? true : false}  text={item.text} date={item.date} time={item.time}/>
-                    </div>
-                )
-            })}
+            {
+                props.index !== null && props.source[props.index]?
+                props.source[props.index].messages.map((item, i)=> {
+                    return (
+                        <div key={i}>
+                            <Message type={item.type === 'in'? true : false}  text={item.text} date={item.date} time={item.time}/>
+                        </div>
+                    )
+                })
+                :
+                'nothing'
+            }
         </div>
     )
 }
