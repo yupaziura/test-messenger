@@ -9,12 +9,15 @@ import './ContactsPanel.scss';
 const ContacstPanel = (props) => {
 
 
-
+    const clickContact = (i) => {
+        props.setIndex(i);
+        props.setSubSource(props.source)
+    }
     
 
     const items = props.source.map(({name,messages, Image}, i) => {
         return (
-            <div className='contact__item' key={i} onClick={()=>{props.setIndex(i)}}>
+            <div className='contact__item' key={i} onClick={()=>{clickContact(i)}}>
                 <div className="contact__img">
                     <Image />
                 </div>

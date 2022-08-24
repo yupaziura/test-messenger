@@ -17,6 +17,7 @@ import './App.css';
 function App() {
 
   const [source, setSource] = useState(data);
+  const [subSource, setSubSource] = useState(data);
   const [search, setSearch] = useState(null);
   const [index, setIndex] = useState(null);
 
@@ -37,12 +38,12 @@ function App() {
     <div className="main_window">
       <ContactsWindow>
           <SearchPanel setSearch={setSearch}/>
-          <ContactsPanel search={search} setIndex={setIndex} source={source}/>
+          <ContactsPanel search={search} setIndex={setIndex} setSubSource={setSubSource} source={source}/>
       </ContactsWindow>
 
       <MessagesWindow>
-        {index !== null? <ContactPanel index={index} source={source}/> : null}
-        <MessageList index={index} source={source}/>
+        {index !== null? <ContactPanel index={index} source={subSource}/> : null}
+        <MessageList index={index} source={subSource}/>
         {index !== null? <InputPanel index={index} setSource={setSource} source={source}/> : null}
       </MessagesWindow>
     </div>
