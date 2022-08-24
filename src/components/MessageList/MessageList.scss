@@ -1,4 +1,10 @@
 .message_list {
     height: calc(100% - 200px);
     overflow-y: scroll;
+
+    .start{
+        margin-top: 25%;
+        text-align: center;
+        color: grey;
+    }
 }

@@ -23,7 +23,9 @@ const MessageList = (props) => {
                     )
                 })
                 :
-                'nothing'
+                <div className="start">
+                    <p>Select contact to start chat</p>
+                </div>
             }
         </div>
     )
