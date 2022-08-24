@@ -17,6 +17,9 @@ const MessageList = (props) => {
         current.scrollTo(0,current.scrollHeight);      
     }
 
+    useEffect(()=>{
+        scrollToBottom()  
+    })
 
 
       useEffect(()=> {
@@ -33,7 +36,7 @@ const MessageList = (props) => {
                 props.source[props.index].messages.map((item, i)=> {
                     return (
                         <div key={i}>
-                            <Message  type={item.type === 'in'? true : false}  text={item.text} date={item.date} time={item.time}/>
+                            <Message  type={item.type === 'in'? true : false}  text={item.text} date={item.date} time={item.time} index={props.index}/>
                         </div>
                     )
                 })

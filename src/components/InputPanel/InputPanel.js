@@ -19,7 +19,19 @@ const InputPanel = (props) => {
     const minutes = fullDate.getMinutes() <10? '0'+fullDate.getMinutes() : fullDate.getMinutes();
 
     const formatedDate = `${day}.${month}.${year}`;
-    const formatedTime = `${hour}:${minutes}`
+    const formatedTime = `${hour}:${minutes}`;
+
+    const moveUp = (array, index) => {
+        if (index < 1 || index >= array.length) {
+            return props.source
+        }
+    
+        return array.sort((x,y)=>{ return x.name === props.source[props.index].name ? -1 : y.name === props.source[props.index].name ? 1 : 0; });
+    }
+
+
+    const test = ['1', '2', '3']
+
 
 
     const sendMessage = (e) => {
@@ -30,8 +42,11 @@ const InputPanel = (props) => {
                 obj.messages = [...obj.messages, {type:'out', date:formatedDate, time:formatedTime, text: message}]
                 
             }
+            // props.setSource(moveUp([...props.source], props.index))
             props.setSource([...props.source])
+
         })
+
         setMessage('')
 
     };
