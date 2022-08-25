@@ -22,13 +22,27 @@ function App() {
   const [index, setIndex] = useState(null);
 
 
+  const items = JSON.parse(localStorage.getItem('array'));
+
+  useEffect(() => {
+    if (items) {
+     setSource(items);
+     setSubSource(items)
+    }
+    else {
+      setSource(data);
+      setSubSource(data)
+    }
+  },[]);
+
+
   useEffect(()=> {
     setSource(
         search?
         source.filter((item, i)=> {
             return item.name.includes(search)
         })
-        : data
+        : items? items : data
     )
 }, [search])
 
