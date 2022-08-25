@@ -1,7 +1,7 @@
 
 const data = [
     {
-        name: 'Max Slodko',
+        name: 'Max',
         image: require('../img/avatars/avatar-1.png'),
         status: true,
         messages: [
