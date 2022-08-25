@@ -41,6 +41,9 @@ const ContacstPanel = (props) => {
 
     return (
         <div className='contsct_panel'>
+            <div className="chat_text">
+                <h2>Chats</h2>
+            </div>
             <Contact items={items}/>
         </div>
     )

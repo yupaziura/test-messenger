@@ -70,7 +70,7 @@ const InputPanel = (props) => {
         <div className='input_panel' >
             <input value={message} onChange={(e)=>{setMessage(e.target.value)}} type="text" placeholder='Type your message' />
             <button onClick={(e)=>sendMessage(e)} className='input_button'>
-                <img src={require('../../img/send.png')} alt="" />
+                <img src={require('../../img/paper-plane.png')} alt="" />
             </button>
         </div>
     )

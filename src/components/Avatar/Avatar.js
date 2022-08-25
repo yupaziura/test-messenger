@@ -1,5 +1,5 @@
 // basic
-import AvatarPhoto from '../../img/avatar-1.svg';
+import AvatarPhoto from '../../img/avatars/avatar_main.svg';
 
 // components
 
