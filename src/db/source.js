@@ -3,7 +3,7 @@ import {ReactComponent as Avatar} from '../img/avatar-1.svg';
 const data = [
     {
         name: 'Test User',
-        Image: Avatar,
+        image: require('../img/avatar.png'),
         status: '',
         messages: [
             {
@@ -58,7 +58,7 @@ const data = [
     },
     {
         name: 'Test User1',
-        Image: Avatar,
+        image: require('../img/avatar.png'),
         status: '',
         messages: [
             {
@@ -83,7 +83,7 @@ const data = [
     },
     {
         name: 'Test User2',
-        Image: Avatar,
+        image: require('../img/avatar.png'),
         status: '',
         messages: [
             {

@@ -41,6 +41,7 @@ const InputPanel = (props) => {
             props.setSource(props.source.length > 1 ? moveUp([...props.source], props.index) : [...props.source])
 
         })
+        localStorage.setItem('array', JSON.stringify(props.source))
 
 
         setMessage('');
@@ -57,7 +58,7 @@ const InputPanel = (props) => {
                     props.setSource(props.source.length > 1 ? moveUp([...props.source], props.index) : [...props.source])
         
                 })  
-
+                localStorage.setItem('array', JSON.stringify(props.source))
                 }).catch(error => console.log(error));
         
         },15000)

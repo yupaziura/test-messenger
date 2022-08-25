@@ -8,7 +8,7 @@ import './Message.scss';
 
 const Message = (props) => {
 
-    const {Image} = data[props.index];
+    const {image} = data[props.index];
 
 
     return (
@@ -17,7 +17,7 @@ const Message = (props) => {
                 <div className="item">
                     <div className="image">
                         {props.type?
-                            <Image style={{width: '40px', height: '40px'}}/>
+                            <img src={image} style={{width: '40px', height: '40px'}}/>
                             :
                             null
                         }

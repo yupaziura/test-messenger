@@ -15,11 +15,11 @@ const ContacstPanel = (props) => {
     }
     
 
-    const items = props.source.map(({name,messages, Image}, i) => {
+    const items = props.source.map(({name,messages, image}, i) => {
         return (
             <div className='contact__item' key={i} onClick={()=>{clickContact(i)}}>
                 <div className="contact__img">
-                    <Image />
+                    <img src={image} alt="" style={{width: '40px', height: '40px'}}/>
                 </div>
                 <div className="contact__data">
                     <div className="contact__name">
