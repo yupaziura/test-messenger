@@ -27,7 +27,7 @@ const ContacstPanel = (props) => {
                     </div>
                     <div className="contact__message">
                         <p className='' >{
-                            messages[messages.length - 1].text
+                            messages[messages.length - 1].text.length >50? messages[messages.length - 1].text.slice(0, 50)+'...' : messages[messages.length - 1].text
                         }</p>
                     </div>
                 </div>

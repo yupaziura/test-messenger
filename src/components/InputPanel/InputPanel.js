@@ -22,7 +22,7 @@ const InputPanel = (props) => {
     const formatedTime = `${hour}:${minutes}`;
 
     const moveUp = (array, index) => {
-        return array.sort((x,y)=>{ return x.name === props.source[props.index].name ? -1 : y.name === props.source[props.index].name ? 1 : 0; });
+        return array.sort((x,y)=>{ return x.name === props.source[index].name ? -1 : y.name === props.source[index].name ? 1 : 0; });
     }
 
 
@@ -30,16 +30,37 @@ const InputPanel = (props) => {
     const sendMessage = (e) => {
         e.preventDefault();
 
+        const fetchPromise = fetch("https://api.chucknorris.io/jokes/random");
+        
+        
+
         props.source.map((obj, i)=> {
             if (i === props.index) {
                 obj.messages = [...obj.messages, {type:'out', date:formatedDate, time:formatedTime, text: message}]
-                
             }
             props.setSource(props.source.length > 1 ? moveUp([...props.source], props.index) : [...props.source])
 
         })
 
-        setMessage('')
+
+        setMessage('');
+
+        setTimeout(()=> {
+            fetchPromise.then(response => {
+                return response.json();
+                }).then(res => {
+                // console.log(res.value);
+                props.source.map((obj, i)=> {
+                    if (i === props.index) {
+                        obj.messages = [...obj.messages, {type:'in', date:formatedDate, time:formatedTime, text: res.value}]
+                    }
+                    props.setSource(props.source.length > 1 ? moveUp([...props.source], props.index) : [...props.source])
+        
+                })  
+
+                }).catch(error => console.log(error));
+        
+        },15000)
 
     };
 
