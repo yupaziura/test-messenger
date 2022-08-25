@@ -65,10 +65,16 @@ const InputPanel = (props) => {
 
     };
 
+    const handleKeyPress = e => {
+        if (e.key === "Enter") {
+            sendMessage(e);
+        }
+      };
+
 
     return (
         <div className='input_panel' >
-            <input value={message} onChange={(e)=>{setMessage(e.target.value)}} type="text" placeholder='Type your message' />
+            <input value={message} onKeyPress={handleKeyPress} onChange={(e)=>{setMessage(e.target.value)}} type="text" placeholder='Type your message' />
             <button onClick={(e)=>sendMessage(e)} className='input_button'>
                 <img src={require('../../img/paper-plane.png')} alt="" />
             </button>

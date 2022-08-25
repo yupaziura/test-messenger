@@ -40,7 +40,7 @@ function App() {
     setSource(
         search?
         source.filter((item, i)=> {
-            return item.name.includes(search)
+            return item.name.toLowerCase().includes(search.toLowerCase())
         })
         : items? items : data
     )
