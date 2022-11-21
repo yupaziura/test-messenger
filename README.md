@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Messenger - test project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Task 📋
+1. When starting the application, the chat user should already have a static list of contacts, as well as a history of communication with some users.
 
-## Available Scripts
+2. When you select a contact from the contact list, the history of communication between users is automatically displayed. Each chat message must have the following attributes - message text, time and date of sending.
 
-In the project directory, you can run:
+3. After selecting the interlocutor, the user has the opportunity to write a message in the chat and after sending it, he should receive an automatic response after 10-15 seconds with a notification. To generate an automatic response, you need to use the Chuck Norris API https://api.chucknorris.io/, namely, use the API method that generates random jokes. The value "value" should be the text of the automatic reply in the chat.
 
-### `npm start`
+4. Implement a search among contacts. Functionally, the search should work in the same way as in any known messenger.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5. Saving message history after reloading the page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+6. Contacts with new messages should automatically move up.
 
-### `npm test`
+7. The appearance of the chat page should be as close as possible to the following picture:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ![image](https://user-images.githubusercontent.com/92332862/203046530-0a31b9ee-3c33-48e9-8676-5d85e6efedff.png)
 
-### `npm run build`
+8. It is preferable to write HTML/SCSS without using UI libraries.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What was done ✅
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - create react app
+ - create custom components
+ - make components styles very similar to the example
+ - create initial database with contacts and chat history
+ - use rest api to get response with a joke
+ - store response and sent messages in localStorage
+ - only custom components and styles
+ - SCSS usage
+ 
+ ## What was not done ❌
+ - adaptive design
+ - login to messenger
